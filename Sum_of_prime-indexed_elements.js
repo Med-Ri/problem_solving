@@ -5,7 +5,25 @@
 
 // Good luck!
 
-
 // -------------------------------------------------------------------------------
 
-
+function total(arr) {
+  let primeSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let isPrime = true;
+    if (i <= 1) {
+      isPrime = false;
+    } else {
+      for (let j = 2; j * j <= i; j++) {
+        if (i % j === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+    }
+    if (isPrime) {
+      primeSum += arr[i];
+    }
+  }
+  return primeSum;
+}
