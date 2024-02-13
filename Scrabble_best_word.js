@@ -14,7 +14,7 @@
 
 // ----------------------------------------------------------------------------------
 
-function getBestWord(points, words) {
+const getBestWord = (points, words) => {
   let maxScore = -Infinity;
   let shortestWordIndex = 0;
 
