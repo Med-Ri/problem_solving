@@ -6,3 +6,8 @@
 
 
 //Solution 1 using (ES6)
+const biggestNumber = (arr) => {
+    return Math.max(...arr)
+}
+
+console.log('result', biggestNumber([19,1,0,20,2,105,-255,30,106])) //result ==> 106
