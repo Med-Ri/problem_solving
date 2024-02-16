@@ -25,3 +25,6 @@ const yearDays = (year) => {
         return year + " has 365 days";
     }
 }
+
+
+console.log('result', yearDays(2000)) //result => 2000 has 366 days
