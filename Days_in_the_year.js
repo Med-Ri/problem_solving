@@ -18,8 +18,7 @@
 // ---------------------------------------------------------------------------
 
 
-function yearDays(year)
-{
+const yearDays = (year) => {
    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
         return year + " has 366 days";
     } else {
