@@ -16,3 +16,17 @@
 // ('[Cats and dogs] are !beautiful and [cute]')       =>  ['[Cats and dogs]', 'are', '!beautiful', 'and', '[cute]']
 
 // -------------------------------------------------------------------------------------------
+
+function cleverSplit(s) {
+  // Regular expression pattern to match words, exclamation marks, and sets
+  const pattern = /\[.*?\]|\S+/g;
+
+  // Find all matches using the pattern
+  const matches = s.match(pattern);
+
+  return matches;
+}
+
+
+
+console.log('result', cleverSplit('Buy a !car [!red green !white] [cheap or !new]')) // result =>  [ 'Buy', 'a', '!car', '[!red green !white]', '[cheap or !new]' ]
