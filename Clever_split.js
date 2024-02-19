@@ -17,7 +17,7 @@
 
 // -------------------------------------------------------------------------------------------
 
-function cleverSplit(s) {
+const cleverSplit = (s) => {
   // Regular expression pattern to match words, exclamation marks, and sets
   const pattern = /\[.*?\]|\S+/g;
 
