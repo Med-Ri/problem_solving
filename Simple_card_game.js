@@ -19,3 +19,44 @@
 // In the third round, 9 beats 8 and Josh gets one point.
 // So you should return: "Steve wins 2 to 1"
 // ----------------------------------------------------------------------------------
+
+function winner(deckSteve, deckJosh) {
+  const values = {
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+    T: 10,
+    J: 11,
+    Q: 12,
+    K: 13,
+    A: 14,
+  };
+  let scoreSteve = 0;
+  let scoreJosh = 0;
+
+  for (let i = 0; i < deckSteve.length; i++) {
+    const steveValue = values[deckSteve[i]];
+    const joshValue = values[deckJosh[i]];
+
+    if (steveValue > joshValue) {
+      scoreSteve++;
+    } else if (joshValue > steveValue) {
+      scoreJosh++;
+    }
+  }
+
+  if (scoreSteve > scoreJosh) {
+    return `Steve wins ${scoreSteve} to ${scoreJosh}`;
+  } else if (scoreJosh > scoreSteve) {
+    return `Josh wins ${scoreJosh} to ${scoreSteve}`;
+  } else {
+    return "Tie";
+  }
+}
+
+
