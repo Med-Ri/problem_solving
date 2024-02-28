@@ -59,4 +59,8 @@ function winner(deckSteve, deckJosh) {
   }
 }
 
+// Example usage:
+const deckSteve = ['A','7','8'];
+const deckJosh = ['K','5','9'];
 
+console.log(winner(deckSteve, deckJosh)); // Output: "Steve wins 2 to 1"
