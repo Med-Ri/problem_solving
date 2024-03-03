@@ -9,17 +9,16 @@
 // 0 <= n <= 1000.
 // ---------------------------------------------------------------------------
 
-
 const squareUp = (n) => {
-    let result = [];
-    for (let i = n; i > 0; i--) {
-      for (let j = 1; j <= n; j++) {
-        if (j <= i) {
-          result.unshift(j);
-        } else {
-          result.unshift(0);
-        }
+  let result = [];
+  for (let i = n; i > 0; i--) {
+    for (let j = 1; j <= n; j++) {
+      if (j <= i) {
+        result.unshift(j);
+      } else {
+        result.unshift(0);
       }
     }
-    return result;
   }
+  return result;
+};
