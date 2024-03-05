@@ -34,3 +34,8 @@ const groupAnagrams = (words) => {
 
   return Array.from(anagramsMap.values());
 };
+
+
+// Test
+const words = ["tsar", "rat", "tar", "star", "tars", "cheese"];
+console.log(groupAnagrams(words)); //result => [ [ 'tsar', 'star', 'tars' ], [ 'rat', 'tar' ], [ 'cheese' ] ]
