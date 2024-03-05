@@ -20,18 +20,17 @@
 
 // ----------------------------------------------------------------------------
 
+const groupAnagrams = (words) => {
+  const anagramsMap = new Map();
 
-function groupAnagrams(words){
-    const anagramsMap = new Map();
-      
-      words.forEach(word => {
-          const sortedWord = word.split('').sort().join('');
-          if (anagramsMap.has(sortedWord)) {
-              anagramsMap.get(sortedWord).push(word);
-          } else {
-              anagramsMap.set(sortedWord, [word]);
-          }
-      });
-      
-      return Array.from(anagramsMap.values());
-  }
+  words.forEach((word) => {
+    const sortedWord = word.split("").sort().join("");
+    if (anagramsMap.has(sortedWord)) {
+      anagramsMap.get(sortedWord).push(word);
+    } else {
+      anagramsMap.set(sortedWord, [word]);
+    }
+  });
+
+  return Array.from(anagramsMap.values());
+};
