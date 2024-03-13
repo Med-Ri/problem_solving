@@ -34,3 +34,10 @@ const pisano = (n) => {
     }
   }
 }
+
+
+// Example usage:
+console.log(pisano(3)); // Output: 8
+console.log(pisano(4)); // Output: 6
+console.log(pisano(5)); // Output: 20
+console.log(pisano(6)); // Output: 24
