@@ -18,3 +18,21 @@
 
 // Your task is to write the Pisano function that takes an integer n and outputs the length of pisano period.
 // ------------------------------------------------------------------------------------
+
+
+
+function pisano(n){
+    let previous = 0;
+     let current = 1;
+     let period = 0;
+ 
+     for (let i = 0; i < n * n; i++) {
+         let temp = (previous + current) % n;
+         previous = current;
+         current = temp;
+         period++;
+         if (previous === 0 && current === 1) {
+             return period;
+         }
+     } 
+ }
