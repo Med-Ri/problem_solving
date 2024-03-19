@@ -10,19 +10,17 @@
 
 // --------------------------------------------------------------------------------
 
-
-function multiplyByDigits(number) {
-    if (number === 0) return 0; // Special case for 0
-    const sign = Math.sign(number); // Save the sign
-    console.log('sign', sign)
-    number = Math.abs(number); // Make number positive for calculation
-    const power = Math.pow(5, Math.floor(Math.log10(number)) + 1); // Calculate 5 raised to the number of digits
-    return sign * number * power; // Multiply by the power and restore the sign
-}
+const multiplyByDigits = (number) => {
+  if (number === 0) return 0; // Special case for 0
+  const sign = Math.sign(number); // Save the sign
+  number = Math.abs(number); // Make number positive for calculation
+  const power = Math.pow(5, Math.floor(Math.log10(number)) + 1); // Calculate 5 raised to the number of digits
+  return sign * number * power; // Multiply by the power and restore the sign
+};
 
 // Test cases
-console.log(multiplyByDigits(3));   // Output: 15
-// console.log(multiplyByDigits(10));  // Output: 250
-// console.log(multiplyByDigits(200)); // Output: 25000
-// console.log(multiplyByDigits(0));   // Output: 0
-// console.log(multiplyByDigits(-3));  // Output: -15
+console.log(multiplyByDigits(3)); // Output: 15
+console.log(multiplyByDigits(10)); // Output: 250
+console.log(multiplyByDigits(200)); // Output: 25000
+console.log(multiplyByDigits(0)); // Output: 0
+console.log(multiplyByDigits(-3)); // Output: -15
