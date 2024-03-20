@@ -34,3 +34,13 @@ const SeriesSum = (n) => {
     return sum.toFixed(2);
   }
 }
+
+
+
+
+// Test cases
+console.log(SeriesSum(1));  // Output: "1.00"
+console.log(SeriesSum(2));  // Output: "1.25"
+console.log(SeriesSum(5));  // Output: "1.57"
+
+
