@@ -11,7 +11,6 @@
 
 // You will only be given Natural Numbers as arguments.
 
-
 // Examples (Input --> Output)
 // n
 // 1 --> 1 --> "1.00"
@@ -19,3 +18,19 @@
 // 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
 
 // -----------------------------------------------------------------------------------------------------
+
+const SeriesSum = (n) => {
+  if (n === 0) {
+    return "0.00";
+  } else {
+    let sum = 0;
+    let denominator = 1;
+
+    for (let i = 0; i < n; i++) {
+      sum += 1 / denominator;
+      denominator += 3;
+    }
+
+    return sum.toFixed(2);
+  }
+}
