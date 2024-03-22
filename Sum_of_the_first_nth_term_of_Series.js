@@ -36,8 +36,6 @@ const SeriesSum = (n) => {
 }
 
 
-
-
 // Test cases
 console.log(SeriesSum(1));  // Output: "1.00"
 console.log(SeriesSum(2));  // Output: "1.25"
