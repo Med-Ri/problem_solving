@@ -24,7 +24,7 @@
 
 // ------------------------------------------------------------------------------------------------
 
-const solution = (force1, force2, theta) => {
+const calculateResultant = (force1, force2, theta) => {
   // Convert angle from degrees to radians
   var thetaRad = (theta * Math.PI) / 180;
 
@@ -46,3 +46,13 @@ const solution = (force1, force2, theta) => {
   // Return the resultant force R and angle phi
   return [R, phi];
 };
+
+
+// Example usage:
+var force1 = 10; // Newton
+var force2 = 5; // Newton
+var theta = 30; // degrees
+
+var result = calculateResultant(force1, force2, theta);
+console.log("Resultant force R: " + result[0] + " Newton");   //Resultant force R: 14.546564555882048 Newton
+console.log("Angle phi with F1: " + result[1] + " degrees");  //Angle phi with F1: 9.896090638982898 degrees
