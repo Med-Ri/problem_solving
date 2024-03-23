@@ -13,7 +13,6 @@
 // Example 2:
 // Input: height = [1,1]
 // Output: 1
- 
 
 // Constraints:
 // n == height.length
@@ -22,24 +21,31 @@
 
 // --------------------------------------------------------------------------------
 
-
 const maxArea = (height) => {
-    let maxArea = 0;
+  let maxArea = 0;
   let left = 0;
   let right = height.length - 1;
-  
+
   while (left < right) {
-      const h = Math.min(height[left], height[right]);
-      const w = right - left;
-      const area = h * w;
-      maxArea = Math.max(maxArea, area);
-      
-      if (height[left] < height[right]) {
-          left++;
-      } else {
-          right--;
-      }
+    const h = Math.min(height[left], height[right]);
+    const w = right - left;
+    const area = h * w;
+    maxArea = Math.max(maxArea, area);
+
+    if (height[left] < height[right]) {
+      left++;
+    } else {
+      right--;
+    }
   }
-  
+
   return maxArea;
 };
+
+
+// Example usage:
+const height1 = [1,8,6,2,5,4,8,3,7];
+console.log("Max Area for Example 1:", maxArea(height1)); // Output: 49
+
+const height2 = [1,1];
+console.log("Max Area for Example 2:", maxArea(height2)); // Output: 1
