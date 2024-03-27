@@ -68,3 +68,15 @@ const threeSum = (nums) => {
 
   return result;
 }
+
+
+
+// Example usage:
+const nums1 = [-1, 0, 1, 2, -1, -4];
+console.log(threeSum(nums1)); // Output: [[-1, -1, 2], [-1, 0, 1]]
+
+const nums2 = [0, 1, 1];
+console.log(threeSum(nums2)); // Output: []
+
+const nums3 = [0, 0, 0];
+console.log(threeSum(nums3)); // Output: [[0, 0, 0]]
