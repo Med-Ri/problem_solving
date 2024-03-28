@@ -52,3 +52,9 @@ var isMatch = function (s, p) {
 
   return dp(0, 0);
 };
+
+
+// Example usage:
+console.log(isMatch("aa", "a"));   // Output: false
+console.log(isMatch("aa", "a*"));  // Output: true
+console.log(isMatch("ab", ".*"));  // Output: true
