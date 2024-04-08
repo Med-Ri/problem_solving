@@ -5,7 +5,6 @@
 // Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.
 // You must write an algorithm with O(log n) runtime complexity.
 
- 
 // Example 1:
 // Input: nums = [4,5,6,7,0,1,2], target = 0
 // Output: 4
@@ -17,7 +16,6 @@
 // Example 3:
 // Input: nums = [1], target = 0
 // Output: -1
- 
 
 // Constraints:
 //     1 <= nums.length <= 5000
@@ -28,35 +26,37 @@
 
 // -----------------------------------------------------------------------------------------------------------------------------------
 
-
 //this solution using binary search
 
+const search = (nums, target) => {
+  let left = 0;
+  let right = nums.length - 1;
 
-var search = function(nums, target) {
-    let left = 0;
-    let right = nums.length - 1;
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
 
-    while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
-
-        if (nums[mid] === target) {
-            return mid;
-        }
-        if (nums[left] <= nums[mid]) {
-            if (nums[left] <= target && target < nums[mid]) {
-                right = mid - 1;
-            } else {
-                left = mid + 1; 
-            }
-        } else { 
-            if (nums[mid] < target && target <= nums[right]) {
-                left = mid + 1; 
-            } else {
-                right = mid - 1; 
-            }
-        }
+    if (nums[mid] === target) {
+      return mid;
     }
 
-    return -1;
+    // If left half is sorted
+    if (nums[left] <= nums[mid]) {
+      // Check if target is within the left half
+      if (nums[left] <= target && target < nums[mid]) {
+        right = mid - 1; // Search left half
+      } else {
+        left = mid + 1; // Search right half
+      }
+    } else {
+      // Right half is sorted
+      // Check if target is within the right half
+      if (nums[mid] < target && target <= nums[right]) {
+        left = mid + 1; // Search right half
+      } else {
+        right = mid - 1; // Search left half
+      }
+    }
+  }
 
+  return -1; // Target not found
 };
