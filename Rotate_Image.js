@@ -18,3 +18,30 @@
 // -1000 <= matrix[i][j] <= 1000
 
 // ---------------------------------------------------------------------------
+
+
+var rotate = function(matrix) {
+    const n = matrix.length;
+   // Iterate through each layer
+   for (let layer = 0; layer < Math.floor(n / 2); layer++) {
+       const first = layer;
+       const last = n - 1 - layer;
+       // Iterate through each element in the layer
+       for (let i = first; i < last; i++) {
+           // Save the top element
+           const top = matrix[first][i];
+
+           // Move left to top
+           matrix[first][i] = matrix[last - (i - first)][first];
+
+           // Move bottom to left
+           matrix[last - (i - first)][first] = matrix[last][last - (i - first)];
+
+           // Move right to bottom
+           matrix[last][last - (i - first)] = matrix[i][last];
+
+           // Move top to right
+           matrix[i][last] = top;
+       }
+   }
+};
