@@ -40,3 +40,19 @@
 // nums is sorted in non-decreasing order.
 
 // -----------------------------------------------------------------------------------------------------------
+
+
+var removeDuplicates = function(nums) {
+     if (nums.length === 0) return 0;
+
+    let uniqueIndex = 0;
+
+    for (let current = 1; current < nums.length; current++) {
+        if (nums[current] !== nums[uniqueIndex]) {
+            uniqueIndex++;
+            nums[uniqueIndex] = nums[current];
+        }
+    }
+
+    return uniqueIndex + 1;
+};
