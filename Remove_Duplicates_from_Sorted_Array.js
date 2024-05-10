@@ -32,7 +32,6 @@
 // Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
 // Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
- 
 
 // Constraints:
 // 1 <= nums.length <= 3 * 104
@@ -41,18 +40,25 @@
 
 // -----------------------------------------------------------------------------------------------------------
 
-
 const removeDuplicates = (nums) => {
-     if (nums.length === 0) return 0;
+  if (nums.length === 0) return 0;
 
-    let uniqueIndex = 0;
+  let uniqueIndex = 0;
 
-    for (let current = 1; current < nums.length; current++) {
-        if (nums[current] !== nums[uniqueIndex]) {
-            uniqueIndex++;
-            nums[uniqueIndex] = nums[current];
-        }
+  for (let current = 1; current < nums.length; current++) {
+    if (nums[current] !== nums[uniqueIndex]) {
+      uniqueIndex++;
+      nums[uniqueIndex] = nums[current];
     }
+  }
 
-    return uniqueIndex + 1;
+  return uniqueIndex + 1;
 };
+
+
+
+let nums1 = [1, 1, 2];
+let nums2 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+
+console.log(removeDuplicates(nums1));  // Output: 2, nums1 = [1, 2, _]
+console.log(removeDuplicates(nums2)); // Output: 5, nums2 = [0, 1, 2, 3, 4, _, _, _, _, _]
