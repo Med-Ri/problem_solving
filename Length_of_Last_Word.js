@@ -25,17 +25,17 @@
 
 // --------------------------------------------------------------------------------------------------
 
-function lengthOfLastWord(s) {
+const lengthOfLastWord = (s) => {
   // Step 1: Trim trailing spaces
   s = s.trim();
-
   // Step 2: Split the string by spaces
   const words = s.split(" ");
-
   // Step 3: Filter out any empty strings
   const filteredWords = words.filter((word) => word.length > 0);
-
   // Step 4: Find the last word in the array and return its length
   const lastWord = filteredWords[filteredWords.length - 1];
   return lastWord.length;
 }
+
+
+
