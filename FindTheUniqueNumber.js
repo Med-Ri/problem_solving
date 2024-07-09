@@ -14,7 +14,7 @@
 
 
 
-function findUniq(arr) {
+const findUniq = (arr) => {
     // Find the unique number by filtering numbers that occur only once
     return arr.find(num => arr.indexOf(num) === arr.lastIndexOf(num));
 }
