@@ -13,7 +13,6 @@ function oldReverseString(str) {
     return reversedStr; // Return the reversed string
 }
 
-// Example usage
 console.log(oldReverseString("hello")); // Output: "olleh"
 
 //es6:
@@ -21,9 +20,21 @@ const reverseStringES6 = (str) => {
     return str.split("").reverse().join("");
 };
 
-// Example usage
 console.log(reverseStringES6("hello")); // Output: "olleh"
 
 
 
 // ================================================================================================================
+
+//exercise 2 :
+//Capitalize Words: Implement a function that capitalizes the first letter of each word in a sentence.
+
+const capitalizeWordsES6 = (sentence) => {
+    return sentence
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+};
+
+// Example usage
+console.log(capitalizeWordsES6("hello world! this is a test."));  // Output: "Hello World! This Is A Test."
