@@ -20,24 +20,37 @@
 // ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 const bonus = (arr, s) => {
+  // Find the minimum value in the input array
   let min = Math.min(...arr);
+  // Map each element in the array to a ratio of min divided by the element
   let x = arr.map((el) => min / el);
+  // Calculate the sum of the ratios
   let sumOfX = x.reduce((acc, currentValue) => acc + currentValue);
+  // Map each ratio to a proportional share of the sum s, rounded to the nearest integer
   return x.map((el) => Math.round((el * s) / sumOfX));
 };
 
-
-
-
-// Test cases
+// Test cases to validate the bonus function
 const testCases = [
-    { arr: [18, 15, 12], s: 851, expected: [230, 276, 345] },
-    { arr: [30, 27, 8, 14, 7], s: 34067, expected: [2772, 3080, 10395, 5940, 11880] },
-    { arr: [1, 2, 3], s: 6, expected: [3, 2, 1] }, // Example test case
-  ];
-  
-  testCases.forEach(({ arr, s, expected }, index) => {
-    const result = bonus(arr, s);
-    console.log(`Test Case ${index + 1}: `, result);
-    console.assert(JSON.stringify(result) === JSON.stringify(expected), `Expected ${JSON.stringify(expected)}, but got ${JSON.stringify(result)}`);
-  });
+  // Each test case includes an array, a sum, and the expected result
+  { arr: [18, 15, 12], s: 851, expected: [230, 276, 345] },
+  {
+    arr: [30, 27, 8, 14, 7],
+    s: 34067,
+    expected: [2772, 3080, 10395, 5940, 11880],
+  },
+  { arr: [1, 2, 3], s: 6, expected: [3, 2, 1] }, // Example test case
+];
+
+// Loop through each test case
+testCases.forEach(({ arr, s, expected }, index) => {
+  // Calculate the result using the bonus function
+  const result = bonus(arr, s);
+  // Log the result for the test case
+  console.log(`Test Case ${index + 1}: `, result);
+  // Assert that the result matches the expected value
+  console.assert(
+    JSON.stringify(result) === JSON.stringify(expected),
+    `Expected ${JSON.stringify(expected)}, but got ${JSON.stringify(result)}`
+  );
+});
