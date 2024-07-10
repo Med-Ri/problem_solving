@@ -22,3 +22,9 @@
 // ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+function bonus(arr, s) {
+    let min = Math.min(...arr);
+    let x = arr.map(el=> min/el)
+    let sumOfX = x.reduce((acc , currentValue) => acc + currentValue)
+    return x.map(el=> Math.round(el*s/sumOfX))
+}
