@@ -15,7 +15,7 @@
 
 // -----------------------------------------------------------------------------------------------------------------------
 
-function threePowers(n) {
+const threePowers = (n) => {
   // Define a function named threePowers that takes one argument 'n'.
 
   if (n <= 2n) {
