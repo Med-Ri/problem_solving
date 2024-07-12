@@ -50,3 +50,10 @@ const threePowers = (n) => {
   // Return true if 'count' is less than or equal to 3, otherwise return false.
   // This checks if the number of 1 bits in the binary representation of 'n' is 3 or fewer.
 }
+
+
+
+console.log('result',  threePowers(2))      //false
+console.log('result',  threePowers(3n))     //true
+console.log('result',  threePowers(5n))     //true
+console.log('result',  threePowers(15n))    //false
