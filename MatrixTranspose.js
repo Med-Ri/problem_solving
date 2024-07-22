@@ -33,4 +33,21 @@ const transpose = (matrix) => {
   }
 
   return transposed;
-}
+};
+
+const matrix1 = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+const matrix2 = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+];
+
+const matrix3 = [[1]];
+
+console.log(transpose(matrix1)); // Expected output: [[1, 4], [2, 5], [3, 6]]
+console.log(transpose(matrix2)); // Expected output: [[1, 3, 5], [2, 4, 6]]
+console.log(transpose(matrix3)); // Expected output: [[1]]
