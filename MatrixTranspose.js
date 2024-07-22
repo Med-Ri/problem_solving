@@ -14,7 +14,7 @@
 
 // ---------------------------------------------------------------------------------------------------------------
 
-function transpose(matrix) {
+const transpose = (matrix) => {
   // Determine the dimensions of the transposed matrix
   const numRows = matrix.length;
   const numCols = matrix[0].length;
