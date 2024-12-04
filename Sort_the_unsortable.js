@@ -18,3 +18,11 @@
 // To reiterate, elements of the array will be either integers or arrays with a single integer.
 
 // ---------------------------------------------------------------------------------------------------
+
+function sortIt(arr) {
+  return arr.sort((a, b) => {
+    const valA = Array.isArray(a) ? a[0] : a;
+    const valB = Array.isArray(b) ? b[0] : b;
+    return valA - valB;
+  });
+}
