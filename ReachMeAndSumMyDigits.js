@@ -52,3 +52,18 @@
 
 
 // -----------------------------------------------------------------------------------------------------------------
+
+
+
+function sumDigNthTerm(initVal, patternL, nthTerm) {
+    let term = initVal;
+   const patternLength = patternL.length;
+   
+   // Compute the nth term using modular pattern cycling
+   for (let i = 0; i < nthTerm - 1; i++) {
+       term += patternL[i % patternLength];
+   }
+   
+   // Compute the sum of digits of the nth term
+   return String(term).split('').reduce((sum, digit) => sum + Number(digit), 0);
+}
